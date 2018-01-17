@@ -15,10 +15,10 @@ var obtains = [
   'µ/utilities.js',
 ];
 
-obtain(obtains, ({ fileServer, router }, { wss }, { config }, { zeroPad })=> {
+obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad })=> {
   exports.app = {};
 
-  fileServer.use('/audio', fileServer.static(`${appData}/audio`));
+  fileServer.use('/audio', express.static(`${appData}/audio`));
 
   var startPlayTime = Date.now();
 

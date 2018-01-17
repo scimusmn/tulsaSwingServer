@@ -13,4 +13,5 @@ obtain(['express', 'body-parser', 'fs'], (express, bodyParser, fs)=> {
 
   exports.fileServer = fileServer;
   exports.router = router;
+  exports.express = express;
 });
