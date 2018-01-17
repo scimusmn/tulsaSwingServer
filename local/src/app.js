@@ -9,8 +9,8 @@ var process = remote.process;
 var appData = '../ForBoot/appData';
 
 var obtains = [
-  `./server/express.js`,
-  `./server/wsServer.js`,
+  `./src/server/express.js`,
+  `./src/server/wsServer.js`,
   `${appData}/config.js`,
   'µ/utilities.js',
 ];
