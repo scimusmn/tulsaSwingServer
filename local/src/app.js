@@ -2,11 +2,18 @@
 
 var remote = require('electron').remote;
 
+var fs = require('fs');
+
 var process = remote.process;
 
 //remote.getCurrentWindow().closeDevTools();
 
 var appData = '../ForBoot/appData';
+
+if (fs.existsSync('/boot/appData/config.js')) {
+  console.log('on pi');
+  appData = '/boot/appData';
+}
 
 var obtains = [
   `./src/server/express.js`,
