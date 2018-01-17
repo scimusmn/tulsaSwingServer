@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "express": "^4.15.4",
+    "body-parser": "^1.18.2",
     "path": "^0.12.7",
     "serialport": "^5.0.0",
     "ws": "^3.1.0"
