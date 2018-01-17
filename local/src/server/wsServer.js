@@ -1,3 +1,5 @@
+if (!window) var window = global;
+
 obtain(['ws'], ({ Server })=> {
   if (!window.wsServer) {
     window.wsServer = new Server({ port: 8080 });

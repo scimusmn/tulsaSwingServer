@@ -6,8 +6,30 @@ var process = remote.process;
 
 //remote.getCurrentWindow().closeDevTools();
 
-obtain([], ()=> {
+var appData = '../ForBoot/appData';
+
+var obtains = [
+  `./server/express.js`,
+  `./server/wsServer.js`,
+  `${appData}/config.js`,
+  'µ/utilities.js',
+];
+
+obtain(obtains, ({ fileServer, router }, { wss }, { config }, { zeroPad })=> {
   exports.app = {};
+
+  fileServer.use('/audio', express.static(`${appData}/audio`));
+
+  var startPlayTime = Date.now();
+
+  for (let i = 0; i < 6; i++) {
+    wss.onOrderedConnect(i, ()=> {
+      wss.send(i, {
+        audioFile: `sensor-server.net/audio/track-${zeroPad(i, 2)}.mp3`,
+        startPlayTime: startPlayTime,
+      });
+    });
+  }
 
   exports.app.start = ()=> {
     console.log('started');
