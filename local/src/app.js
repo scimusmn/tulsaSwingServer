@@ -34,9 +34,9 @@ obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad
       wss.send(i, {
         audioFile: `http://sensor-server.net/audio/track-${zeroPad(i, 2)}.mp3`,
         startPlayTime: startPlayTime,
-        controlFunc: (point, el)=> {
+        controlFunc: ((point, el)=> {
           console.log(point);
-        },
+        }).toString(),
       });
     });
   }
