@@ -32,7 +32,7 @@ obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad
   for (let i = 0; i < 6; i++) {
     wss.onOrderedConnect(i, ()=> {
       wss.send(i, {
-        audioFile: `http://sensor-server.net/audio/track-${zeroPad(i, 2)}.mp3`,
+        audioFile: `http://172.91.0.1/audio/track-${zeroPad(i, 2)}.mp3`,
         startPlayTime: startPlayTime,
         controlFunc: ((swing, audio)=> {
           var swingDist = Math.sqrt(Math.pow(swing.point.x, 2) + Math.pow(swing.point.y, 2));
