@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REPO_NAME = tulsaSwingServer
-ACCOUNT = scimusmn
+REPO_NAME=tulsaSwingServer
+ACCOUNT=scimusmn
 
 echo "\nInstalling node:"
 
