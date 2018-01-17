@@ -32,8 +32,11 @@ obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad
   for (let i = 0; i < 6; i++) {
     wss.onOrderedConnect(i, ()=> {
       wss.send(i, {
-        audioFile: `sensor-server.net/audio/track-${zeroPad(i, 2)}.mp3`,
+        audioFile: `http://sensor-server.net/audio/track-${zeroPad(i, 2)}.mp3`,
         startPlayTime: startPlayTime,
+        controlFunc: (point, el)=> {
+          console.log(point);
+        },
       });
     });
   }
