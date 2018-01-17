@@ -33,6 +33,7 @@ obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad
 
   exports.app.start = ()=> {
     console.log('started');
+    fileServer.start();
 
     document.onkeypress = (e)=> {
       if (e.key == ' ') console.log('Space pressed');
