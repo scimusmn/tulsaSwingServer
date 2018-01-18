@@ -77,6 +77,7 @@ obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad
           ctrlFunc: ctrlFunc.toString(),
           setupFunc: setupFunc.toString(),
           syncTracks: true,
+          startPlayTime: startPlayTime,
         },
         startPlayTime: startPlayTime,
       });
