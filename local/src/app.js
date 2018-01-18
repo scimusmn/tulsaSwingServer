@@ -76,6 +76,7 @@ obtain(obtains, ({ fileServer, router, express }, { wss }, { config }, { zeroPad
           tracks: [`http://172.91.0.1/audio/track-${zeroPad(i, 2)}.mp3`],
           ctrlFunc: ctrlFunc.toString(),
           setupFunc: setupFunc.toString(),
+          syncTracks: true,
         },
         startPlayTime: startPlayTime,
       });
